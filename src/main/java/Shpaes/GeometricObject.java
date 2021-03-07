@@ -23,7 +23,7 @@ public abstract class GeometricObject extends Object {
         return this.color;
     }
 
-    public void setColor(String color) {
+    public final void setColor(String color) {
         this.color = color;
     }
 

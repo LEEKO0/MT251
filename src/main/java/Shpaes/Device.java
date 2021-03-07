@@ -4,6 +4,10 @@ public class Device {
     private double cost;
     public boolean strated;
 
+    public Device() {
+
+    }
+
     Device(double cost, boolean strated) {
         this.cost = cost;
         this.strated = strated;
@@ -23,7 +27,7 @@ public class Device {
         System.out.println("Shut Down device");
     }
 
-    public String toString() {
-        return "The cost is: " + this.cost;
-    }
+    // public String toString() {
+    // return "The cost is: " + this.cost;
+    // }
 }
