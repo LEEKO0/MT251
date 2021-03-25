@@ -57,4 +57,14 @@ public class Robot {
         return "X: " + this.getX() + ",\t" + "Y: " + this.getY();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Robot) {
+            Robot robot = (Robot) o;
+            if (robot.getX() == this.x && robot.getY() == this.y)
+                return true;
+        }
+        return false;
+    }
+
 }

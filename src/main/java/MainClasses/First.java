@@ -2,29 +2,54 @@ package MainClasses;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.*;
 
 public class First {
     public static Scanner input = new Scanner(System.in);
     Integer[] j = { 1, 2, 3, 4 };
 
     public static void main(String[] args) {
-        DeomList deomList = new DeomList();
-        System.out.println(deomList);
-        deomList.fill();
-        deomList.brint();
-        deomList.sortList();
-        deomList.brint();
+        System.out.println(-11 % 3);
+        "ABC".compareTo("BDA");
 
-        System.out.println();
-        char ch = 10;
-        System.out.println(ch);
-        System.out.println("Max number is :" + deomList.maximum());
-        System.out.println("Avarage :" + deomList.avarage());
-        System.out.println("median :" + deomList.median());
-        System.out.println("median :" + deomList.median());
+        try {
+            File filePath = new File("C:\\Users\\saa11\\Desktop\\x.txt");
+            PrintWriter write = new PrintWriter(filePath);
+            write.println("Study well for the final exam");
+            write.println("It will be an easy exam");
+            write.println("Just study well and concentrate during the exam");
+            write.println("Good Luck");
 
-        byte[] b = new byte[4];
+            write.close();
+
+            Scanner read = new Scanner(filePath);
+
+            while (read.hasNextLine()) {
+                System.out.println(read.nextLine());
+            }
+            read.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        // DeomList deomList = new DeomList();
+        // System.out.println(deomList);
+        // deomList.fill();
+        // deomList.brint();
+        // deomList.sortList();
+        // deomList.brint();
+
+        // System.out.println();
+        // char ch = 10;
+        // System.out.println(ch);
+        // System.out.println("Max number is :" + deomList.maximum());
+        // System.out.println("Avarage :" + deomList.avarage());
+        // System.out.println("median :" + deomList.median());
+        // System.out.println("median :" + deomList.median());
+
+        // byte[] b = new byte[4];
 
     }
 

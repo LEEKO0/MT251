@@ -1,6 +1,6 @@
 package Shpaes;
 
-public class Circle extends Device implements Comparable<Circle> {
+public class Circle extends GeometricObject implements Comparable<Circle> {
 
     private double radiuse;
 
@@ -43,10 +43,12 @@ public class Circle extends Device implements Comparable<Circle> {
         return (int) (this.getRadius() - o.getRadius());
     }
 
+    @Override
     public double getArea() {
         return Math.pow(this.radiuse, 2) * Math.PI;
     }
 
+    @Override
     public double getPerimeter() {
         return 2 * Math.PI * this.radiuse;
     }

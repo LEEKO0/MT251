@@ -6,6 +6,9 @@ public class TestRobot {
         Robot tetoo = new Robot(5, 2);
         Robot detoo = new Robot();
 
+        tetoo.getX();
+        detoo.getX();
+
         detoo.setX(3);
         detoo.setY(10);
 

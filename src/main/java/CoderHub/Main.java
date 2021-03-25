@@ -255,18 +255,18 @@ public class Main {
 
     public static int doCalculate(int num1, int num2, char operation) {
         switch (operation) {
-            case '+':
-                return num1 + num2;
-            case '-':
-                return num1 - num2;
-            case '*':
-                return num1 * num2;
-            case '/':
-                return num1 / num2;
-            case '%':
-                return num1 % num2;
-            default:
-                return 0;
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            return num1 / num2;
+        case '%':
+            return num1 % num2;
+        default:
+            return 0;
         }
     }
 
@@ -367,12 +367,11 @@ public class Main {
         leftSide = mergSortArry(leftSide);
         rightSide = mergSortArry(rightSide);
 
-        resultArray = merge2(leftSide, rightSide);
+        resultArray = merge(leftSide, rightSide);
         return resultArray;
     }
 
     public static int[] mergeSort(int[] node1, int[] node2) {
-        // write your code here
         int[] array = new int[node1.length + node2.length];
         int counter = 0;
         for (int i = 0; i < node1.length; i++)
@@ -531,7 +530,7 @@ public class Main {
     }
 
     // Breaks down the array to single or null elements in array.
-    private static int[] mergeSort(int[] array) {
+    public static int[] mergeSort(int[] array) {
 
         // Recursive control 'if' statement.
         if (array.length <= 1)

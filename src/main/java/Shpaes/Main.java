@@ -3,11 +3,11 @@ package Shpaes;
 public class Main {
     public static void main(String[] arg) {
         Object o = new Circle();
+        Circle circle = new Circle();
 
-        Circle circle = (Circle) new Device();
+        circle.setRadius(5);
 
-        Device circle2 = new Circle();
-
+        
         Object o2 = new Device();
 
         System.out.println(o.toString());
