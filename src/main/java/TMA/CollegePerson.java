@@ -8,27 +8,39 @@ import java.util.*;
 public abstract class CollegePerson extends Object {
     private String id;
     private String fullName;
-    private Date birthday;
     private int age;
     private boolean isMale;
 
     public CollegePerson() {
-        this(null, null, false);
+        this(null, 0, false);
     }
 
-    public CollegePerson(String fullName, Date birthday, boolean isMale) {
-
+    public CollegePerson(String fullName, int age, boolean isMale) {
+        this.setFullName(fullName);
+        this.setIsMale(isMale);
+        this.setAge(age);
+        if (this instanceof Instructor)
+            this.setId("INST" + gen());
+        if (this instanceof Student)
+            this.setId("STUD" + gen());
     }
 
     /**
-     * 
      * writing getter and setter for all properties
      */
     public String getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    /**
+     * settre id will be private access, because when we create a new College Person
+     * we will generate a random id for College Person, if it was Instructor we will
+     * add INST before his number, and if it was Student we will put STUD before his
+     * number
+     * 
+     * @param id
+     */
+    private void setId(String id) {
         this.id = id;
     }
 
@@ -40,14 +52,6 @@ public abstract class CollegePerson extends Object {
         this.fullName = fullName;
     }
 
-    // public Date getBirthday() {
-    // return this.birthday;
-    // }
-
-    // public void setBirthday(Date birthday) {
-    // this.birthday = birthday;
-    // }
-
     public boolean getIsMale() {
         return this.isMale;
     }
@@ -56,9 +60,6 @@ public abstract class CollegePerson extends Object {
         this.isMale = isMale;
     }
 
-    /**
-     * calculate age
-     */
     public int getAge() {
         return age;
     }
@@ -67,8 +68,10 @@ public abstract class CollegePerson extends Object {
         this.age = age;
     }
 
-    // generat random numbers for id
-    public static int gen() {
+    /*
+     * * this method generate a random id for every College Person
+     */
+    private static int gen() {
         Random r = new Random(System.currentTimeMillis());
         return 10000 + r.nextInt(20000);
     }

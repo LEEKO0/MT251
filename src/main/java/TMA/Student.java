@@ -10,12 +10,11 @@ public class Student extends CollegePerson implements Comparable<Student> {
     private String program;
 
     public Student() {
-        this(null, null, false);
+        this(null, 0, false);
     }
 
-    public Student(String fullName, Date birthday, boolean isMale) {
-        super(fullName, birthday, isMale);
-        super.setId("S" + super.gen());
+    public Student(String fullName, int age, boolean isMale) {
+        super(fullName, age, isMale);
 
     }
 
@@ -149,7 +148,7 @@ public class Student extends CollegePerson implements Comparable<Student> {
                     System.out.print("Gender M / F: ");
                     student.setIsMale(Registration.input.next().toUpperCase().equals("M"));
 
-                    System.out.println("\n---- Add new Student in  " + student.getCourse(courseCode) + "- with id "
+                    System.out.println("\n---- Add new Student in  " + student.getCourse(courseCode) + " - with id "
                             + student.getId() + " ----\n");
                     section.addNewStudent(student);
                 }

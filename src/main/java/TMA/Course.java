@@ -61,12 +61,4 @@ public abstract class Course {
         return "Coure Code: " + this.getCourseCode() + "\t" + "Credit Hours: " + this.getCreditHours();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof Course)
-            return this.getCourseCode().equals(((Course) o).getCourseCode())
-                    && this.getCreditHours() == ((Course) o).getCreditHours();
-        return false;
-
-    }
 }

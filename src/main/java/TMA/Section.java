@@ -5,7 +5,7 @@ import java.util.*;
 public class Section extends Course implements Comparable<Section> {
 
     private String sectionNumber;
-    private Instrctor instrctor = new Instrctor();;
+    private Instructor instructor = new Instructor();;
     private Map<String, Student> students = new HashMap<>();
     private String branch;
     public static final int MAXIUMUM_NUMBER = 25;
@@ -83,7 +83,7 @@ public class Section extends Course implements Comparable<Section> {
 
             sections.add(newSection);
             System.out.println("\n---- Add new section ---- \n");
-            Instrctor.addNewIntrecotr(newSection);
+            Instructor.addNewIntrecotr(newSection);
         } else {
             int counter = 0;
             for (Section section : sections) {
@@ -103,7 +103,7 @@ public class Section extends Course implements Comparable<Section> {
                 System.out.print("Is Every Week?  ");
                 newSection.SetIsEveryWeek(Registration.input.nextBoolean());
 
-                Instrctor.addNewIntrecotr(newSection);
+                Instructor.addNewIntrecotr(newSection);
                 sections.add(newSection);
             } else {
                 System.out.println("---- This section aleardy added ----");
@@ -131,12 +131,12 @@ public class Section extends Course implements Comparable<Section> {
             System.out.println("\n---- Student not found ----\n");
     }
 
-    public String getInstrctor() {
-        return instrctor.toString();
+    public String getInstructor() {
+        return instructor.toString();
     }
 
-    public void setInstrctor(Instrctor instrctor) {
-        this.instrctor = instrctor;
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 
     public static void averageOfStudent(Set<Section> sections) {
@@ -204,7 +204,7 @@ public class Section extends Course implements Comparable<Section> {
 
         return "\n=================================\n" + super.toString() + "\t\t" + "Is Every Week: "
                 + this.isEveryWeek() + "\n" + "Section Number: " + this.getSectionNumber() + "\n" + "Branch: "
-                + this.getBranch() + "\n" + "-----------------------------\n" + "Instrctor: \n" + instrctor.toString()
+                + this.getBranch() + "\n" + "-----------------------------\n" + "Instructor: \n" + instructor.toString()
                 + "\n-----------------------------\n" + "List of Students: \n\n" + this.getStudents()
                 + "\n=================================\n";
     }

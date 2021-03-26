@@ -11,36 +11,36 @@ package AhlamSaleh_19425106;
  */
 
 import java.util.*;
-public class Student extends People{
+
+public class Student extends People {
     private int weight;
     private Date AdmissionDate;
     private String year;
-    Student()
-    {
-        
+    private int Section;
+
+    Student() {
+        this(null, 0, 0, false, 0, "", 0);
     }
-    Student(String Name, int Id, int Age, boolean isFemale, int weight, String year)
-    {
-        
-        super(Name,Id,Age,isFemale);
-        this.weight=weight;
+
+    Student(String Name, int Id, int Age, boolean isFemale, int weight, String year, int Section) {
+
+        super(Name, Id, Age, isFemale);
+        this.weight = weight;
         this.year = year;
-        AdmissionDate= new Date();
-        
+        this.Section = Section;
+        AdmissionDate = new Date();
 
     }
-    
-    public int getweight()
-    {
+
+    public int getweight() {
         return this.weight;
     }
-    public void setweight(int weight)
-    {
-        this.weight=weight;
+
+    public void setweight(int weight) {
+        this.weight = weight;
     }
-    
-    public Date getAdmissionDate()
-    {
+
+    public Date getAdmissionDate() {
         return this.AdmissionDate;
     }
 
@@ -51,25 +51,31 @@ public class Student extends People{
     public void setyear(String year) {
         this.year = year;
     }
+
+    public int getSection() {
+        return Section;
+    }
+
+    public void setSection(int Section) {
+        this.Section = Section;
+    }
+
     @Override
-    public boolean equals(Object o)
-    {
-        if(o instanceof Student)
-        {
-            Student s=(Student)o;
-            if(super.equals(s))
+    public boolean equals(Object o) {
+        if (o instanceof Student) {
+            Student s = (Student) o;
+            /* if(super.equals(s)) */
             {
-                return s.getweight() == this.weight && s.getAdmissionDate().equals(this.AdmissionDate)&& s.getyear().equals(this.year);
+                return s.getweight() == this.weight && s.getyear().equals(this.year);
             }
         }
         return false;
     }
+    /* s.getAdmissionDate().equals(this.AdmissionDate)&& */
 
     @Override
     public String toString() {
-        return super.toString() + "weight=" + weight + ", AdmissionDate=" + AdmissionDate + ", year=" + year ;
+        return super.toString() + "weight=" + weight + ", AdmissionDate=" + AdmissionDate + ", year=" + year;
     }
-    
-    
-   
+
 }

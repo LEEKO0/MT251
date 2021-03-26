@@ -25,6 +25,7 @@ public class Section {
         this.Inst = Inst;
         this.LectureTime = LectureTime;
         Date = new Date();
+
     }
 
     public int getSection() {
@@ -63,6 +64,10 @@ public class Section {
         return this.Date;
     }
 
+    public ArrayList<Student> getStudents() {
+        return Students;
+    }
+
     public static void addSection(ArrayList<Section> sections) {
 
         Section sec = new Section();
@@ -74,17 +79,16 @@ public class Section {
         sec.setCourseCode(CourseCode);
 
         for (Section section : sections) {
-            if (section.equals(sec)) {
+            if (sections.equals(sec)) {
                 System.out.println("Section already available, Section not added");
             } else {
-
                 System.out.println("Section is added");
             }
         }
 
     }
 
-    public void addStudent(Student s) {
+    public void addStudent(Student stu) {
         boolean Exists = false;
         if (Students.size() > maximum) {
             System.out.println("The section is full, can't add student.");
@@ -92,7 +96,7 @@ public class Section {
         } else {
 
             for (Student Stud : Students) {
-                if (Stud.equals(s)) {
+                if (Stud.equals(stu)) {
                     System.out.println("Student is not added successfully");
                     Exists = true;
                     break;
@@ -100,7 +104,7 @@ public class Section {
 
             }
             if (Exists == false) {
-                Students.add(s);
+                Students.add(stu);
                 System.out.println("Student added successfully");
             }
 
@@ -108,17 +112,41 @@ public class Section {
     }
 
     public static void addStudentSection(Section sec) {
-        Student a = new Student();
+        Student stu = new Student();
         System.out.println("1- Enter Student Name:");
         String Name = Data.input.nextLine();
+        Name = Data.input.nextLine();
         System.out.println("2- Enter Student Id:");
         int Id = Data.input.nextInt();
         System.out.println("3- Enter Student Section:");
-        String sectionNo = Data.input.nextLine();
-        sectionNo = Data.input.nextLine();
+        int sectionNo = Data.input.nextInt();
         System.out.println("4- Enter Student Year:");
         int year = Data.input.nextInt();
-        sec.addStudent(a);
+        stu.setName(Name);
+        stu.setAge(Id);
+        stu.setSection(sectionNo);
+        stu.setweight(year);
+        sec.addStudent(stu);
+
+    }
+
+    public static void removeStudent(Student stu, Section sec) {
+        for (int i = 0; i < sec.getStudents().size(); i++) {
+            if (sec.getStudents().get(i).equals(stu)) {
+                sec.getStudents().remove(i);
+                System.out.println("Student removed successfully");
+            } else {
+                System.out.println("Student cant be removed, Student not available");
+            }
+        }
+    }
+
+    public static void AverageStudent() {
+
+    }
+
+    public static void DisplaySection() {
+
     }
 
     @Override
@@ -126,7 +154,8 @@ public class Section {
         if (o instanceof Section) {
             Section sc = (Section) o;
 
-            return sc.getCourseCode().equals(this.CourseCode) && sc.getSection() == this.SectionNo;
+            return sc.getCourseCode().equals(this.CourseCode) && sc.getSection() == this.SectionNo
+                    && sc.getInst().equals(this.Inst);
 
         }
         return false;
@@ -139,17 +168,3 @@ public class Section {
     }
 
 }
-/*
- * 
- * public void removeStudent(Student stud) { if (!Student.contains(stud))
- * Student.remove(stud); else System.out.println("Student is not available "); }
- * public void AverageStudent() {
- * 
- * }
- * 
- * public void DisplaySection() {
- * 
- * }
- * 
- * @Override public String toString() { return ""; }
- */
