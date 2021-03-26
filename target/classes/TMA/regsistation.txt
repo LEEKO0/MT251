@@ -1,0 +1,35 @@
+
+=================================
+Coure Code: S1	Credit Hours: 8		Is Every Week: true
+Section Number: sec
+Branch: jeddah
+-----------------------------
+Instrctor: 
+Id: I29985		Full Name: saleh	Age: 25		Gender: Male
+Biography: jedah
+-----------------------------
+List of Students: 
+
+1-  id: S14698 	 Name: Mohmed 	 Program: English
+2-  id: S27283 	 Name: ali saleh 	 Program: IT
+3-  id: S12318 	 Name: Ammar 	 Program: IT
+
+=================================
+
+
+=================================
+Coure Code: S1	Credit Hours: 6		Is Every Week: true
+Section Number: sec1
+Branch: jeddah
+-----------------------------
+Instrctor: 
+Id: I15126		Full Name: saleh	Age: 25		Gender: Male
+Biography: jeddah
+-----------------------------
+List of Students: 
+
+1-  id: S24325 	 Name: ammarr 	 Program: it
+2-  id: S25219 	 Name: Mohmeeed 	 Program: IT
+
+=================================
+
